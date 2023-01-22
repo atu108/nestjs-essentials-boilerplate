@@ -1,0 +1,72 @@
+export const configuration = () => ({
+  environment: process.env.NODE_ENV,
+  api: {
+    host: process.env.HOST || '127.0.0.1',
+    port: parseInt(process.env.PORT || '4000', 10),
+    limit: parseInt(process.env.LIMIT || '15', 10),
+  },
+  db: {
+    url: process.env.DATABASE_URL,
+    host: process.env.DB_HOST || '127.0.0.1',
+    port: parseInt(process.env.DB_PORT || '5432', 10),
+    user: process.env.DB_USER || 'postgres',
+    password: process.env.DB_PASSWORD || '',
+    name: process.env.DB_NAME || '',
+    reset:
+      (process.env.DB_RESET || false) &&
+      process.env.DB_RESET.toLowerCase() === 'true',
+  },
+
+  aws: {
+    s3: {
+      bucket: process.env.S3_BUCKET || '',
+      region: process.env.S3_REGION || 'us-east-1',
+      accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
+      secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
+      url: process.env.S3_URL || '',
+      directory: process.env.S3_DIRECTORY || '',
+    },
+  },
+  disk: {
+    path: process.env.FILES_PATH || '',
+    serveRoot: process.env.FILES_SERVE_ROOT || '',
+    baseUrl: process.env.FILES_BASE_URL || '',
+  },
+  log: {
+    level: process.env.LOG_LEVEL || 'info',
+    fileNameFormat: process.env.LOG_FILE_NAME_FORMAT || 'YYYY-MM-DD',
+    path: process.env.LOG_PATH || '',
+  },
+  storage: process.env.STORAGE || 'S3',
+  image: {
+    small: process.env.IMAGE_WIDTH_SMALL || '500',
+    medium: process.env.IMAGE_WIDTH_MEDIUM || '1000',
+    large: process.env.IMAGE_WIDTH_LARGE || '2000',
+  },
+  video: {
+    thumbnail: process.env.VIDEO_THUMBNAIL || 'true',
+    tempPath: process.env.VIDEO_TEMP_PATH || '',
+  },
+  smtpHost: process.env.SMTP_HOST || '127.0.0.1',
+  smtpPort: parseInt(process.env.SMTP_PORT || '587', 10),
+  smtpUser: process.env.SMTP_USER || '',
+  smtpPassword: process.env.SMTP_PASSWORD || '',
+  smtpSecure: process.env.SMTP_SECURE === 'true',
+  mailTemplatePath: process.env.MAIL_TEMPLATE_PATH || '',
+  jwtPrivateKey: process.env.JWT_PRIVATE_KEY,
+  jwtPublicKey: process.env.JWT_PUBLIC_KEY,
+  jwtExpiry: process.env.JWT_EXPIRY,
+  jwtRefreshExpiry: process.env.JWT_REFRESH_EXPIRY,
+  jwtIssuer: process.env.JWT_ISSUER,
+  jwtAlgorithm: process.env.JWT_ALGORITHM || 'RS256',
+  logFileNameFormat: process.env.LOG_FILE_NAME_FORMAT || 'YYYY-MM-DD',
+  logPath: process.env.LOG_PATH,
+  logLevel: process.env.LOG_LEVEL || 'DEBUG',
+  storageType: process.env.STORAGE_TYPE || 'DISC',
+  uploadPath: process.env.UPLOAD_PATH || '',
+  googleProjectId: process.env.GOOGLE_PROJECT_ID || '',
+  googleKeyPath: process.env.GOOGLE_KEY_PATH || '',
+  googleBucket: process.env.GOOGLE_BUCKET || '',
+  googleUrl: process.env.GOOGLE_URL || '',
+  excelFilePath: process.env.EXCEL_FILE_PATH || '',
+});

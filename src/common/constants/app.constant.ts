@@ -1,0 +1,73 @@
+export const APPLICATION_NAME = 'BIZISELL';
+export const APPPLICATION_DESCRIPTION = 'EMPLOYEE AND TASK MANAGEMENT CRM';
+export const FIRST_ADMIN_EMAIL = 'pro@iweb.com';
+export const SORT_ORDER = {
+  ASC: 'ASC',
+  DESC: 'DESC',
+};
+
+export const SORT_ORDER_LIST = (() => Object.keys(SORT_ORDER))();
+export const IMAGE_SIZES = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+export const IMAGE_SIZES_LIST = (() => Object.keys(IMAGE_SIZES))();
+
+export const OTP_TYPES = {
+  EMAIL: 'EMAIL',
+  MOBILE: 'MOBILE',
+};
+
+export const OTP_TYPES_LIST = (() => Object.keys(OTP_TYPES))();
+
+export const OTP_PURPOSE = {
+  LOGIN: 'LOGIN',
+  FORGOT_PASSWORD: 'FORGOT_PASSWORD',
+  CHANGE_PASSWORD: 'CHANGE_PASSWORD',
+  CHANGE_EMAIL: 'CHANGE_EMAIL',
+  CHANGE_MOBILE: 'CHANGE_MOBILE',
+  VERIFY_MOBILE: 'VERIFY_MOBILE',
+  VERIFY_EMAIL: 'VERIFY_EMAIL',
+  ROUTE_ACCESS: 'ROUTE_ACCESS',
+};
+
+export const OTP_PURPOSE_LIST = (() => Object.keys(OTP_PURPOSE))();
+
+const OTP_PURPOSE_AS_CONST = [...OTP_PURPOSE_LIST] as const;
+export type OTP_PURPOSE_TYPE = typeof OTP_PURPOSE_AS_CONST[number];
+
+export const OTP_VALIDITY = 4; // in minutes
+
+export const DATE_FORMAT = 'YYYY-MM-DD HH:mm:ss.SSS';
+
+export enum EXCEL_TYPES {
+  COUNTRY = 'COUNTRY',
+  STATE = 'STATE',
+  CITY = 'CITY',
+  ZONE = 'ZONE',
+  CLUSTER = 'CLUSTER',
+  PIN_CODE = 'PIN_CODE',
+  USER = 'USER',
+  POC_TYPE = 'POC_TYPE',
+  PERSON_OF_CONTACT = 'PERSON_OF_CONTACT',
+  CLIENT = 'CLIENT',
+  USER_ROLE = 'USER_ROLE',
+  INDUSTRY = 'INDUSTRY',
+  IFSC = 'IFSC',
+  EMPLOYMENT_TYPE = 'EMPLOYMENT_TYPE',
+  DESIGNATION = 'DESIGNATION',
+  DEPARTMENT = 'DEPARTMENT',
+  COMPANY = 'COMPANY',
+  BANK = 'BANK',
+  ATTENDANCE = 'ATTENDANCE',
+}
+
+export const EXCEL_TYPES_LIST = Object.keys(EXCEL_TYPES);
+
+export enum DOCUMENT_DETAILS {
+  NAME = 'NAME',
+  FATHER_NAME = 'FATHER_NAME',
+  DOB = 'DOB',
+}
+export const DOCUMENT_DETAILS_LIST = Object.keys(DOCUMENT_DETAILS);
